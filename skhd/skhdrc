@@ -1,0 +1,75 @@
+# Changing window focus within a display
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west
+
+# Changing window focus between displays
+alt - u : yabai -m display --focus east 
+alt - a : yabai -m display --focus west
+alt - g : yabai -m display --focus north
+alt - c : yabai -m display --focus south 
+
+# Change window positioning within display
+shift + alt - r : yabai -m space --rotate 270
+shift + alt - y : yabai -m space --mirrior y-axis
+shift + alt - x : yabai -m space --mirror x-axis
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Maximize a window
+shift + alt - m : yabai -m window --toggle zoom-fullscreen
+
+# balance out tree of windows (resize to occupy same area)
+shift + alt - e : yabai -m space --balance
+
+# Focus on the window the mouse is on. This is handy when something other than yabai changes the windows and yabai loses focus
+shift + alt - f : yabai -m window --focus mouse
+
+# Minimize the current window
+cmd - m : yabai -m window $WINDOWID --minimize
+
+# Move a window to another display
+shift + alt - a : yabai -m window --display west; yabai -m display --focus west;
+shift + alt - u : yabai -m window --display east; yabai -m display --focus east;
+shift + alt - g : yabai -m window --display north; yabai -m display --focus north;
+shift + alt - c : yabai -m window --display south; yabai -m display --focus south;
+
+# move window to prev and next space 
+hyper - h : yabai -m window --space prev  && \
+                  yabai -m space --focus prev
+hyper - l : yabai -m window --space next && \
+                  yabai -m space --focus next
+
+#move focus to prev and next space
+hyper - a : yabai -m space --focus prev;
+hyper - u : yabai -m space --focus next;
+
+# focus to space #
+hyper - 1 : yabai -m space --focus 1
+hyper - 2 : yabai -m space --focus 2
+hyper - 3 : yabai -m space --focus 3
+hyper - 4 : yabai -m space --focus 4
+hyper - 5 : yabai -m space --focus 5
+hyper - 6 : yabai -m space --focus 6
+hyper - 7 : yabai -m space --focus 7
+
+
+# move window to space #
+hyper + rshift - 1 : yabai -m window --space 1 && \
+                  yabai -m space --focus 1
+hyper + rshift - 2 : yabai -m window --space 2 && \
+                  yabai -m space --focus 2
+hyper + rshift - 3 : yabai -m window --space 3 && \
+                  yabai -m space --focus 3
+hyper + rshift - 4 : yabai -m window --space 4 && \
+                  yabai -m space --focus 4
+hyper + rshift - 5 : yabai -m window --space 5  && \
+                  yabai -m space --focus 5
+hyper + rshift - 6 : yabai -m window --space 6  && \
+                  yabai -m space --focus 6
+hyper + shift - 7 : yabai -m window --space 7  && \
+                  yabai -m space --focus 7
+
+# Control Yabai by stopping or starting it
+shift + alt + cmd + ctrl - y: yabai --start-service
+shift + alt + cmd + ctrl - x: yabai --stop-service
