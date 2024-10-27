@@ -19,23 +19,27 @@ return {
       },
 
       -- ai based completion
-      {
-        "jcdickinson/codeium.nvim",
-        config = function()
-          require("codeium").setup {}
-        end,
-      },
+      -- {
+      --   "jcdickinson/codeium.nvim",
+      --   config = function()
+      --     require("codeium").setup {}
+      --   end,
+      -- },
     },
 
     config = function(_, opts)
+
+      local cmp = require("cmp")
       table.insert(opts.sources, 1, { name = "codeium" })
       opts.experimental = { ghost_text = true }
-      local cmp = require("cmp")
-      cmp.setup(opts)
 
-      cmp.mapping = {
-        ["<A-y>"] = cmp.mapping.confirm { select = false },
+      local mappings = {
+        ["<C-y>"] = cmp.mapping.confirm { select = false },
       }
+
+      opts.mapping = vim.tbl_deep_extend("force", opts.mapping, mappings)
+
+      cmp.setup(opts)
     end,
   },
 
