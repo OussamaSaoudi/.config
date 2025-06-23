@@ -1,0 +1,31 @@
+/tmux/plugins
+
+# configs to ignore
+/karabiner
+/htop
+/octave
+/raycast
+/wireshark
+/yarn
+/zed
+/github-copilot
+/cabal
+/chrome
+/duckduckgo
+/ghc
+/timewarrior
+/configstore
+
+# emacs subdirectories
+/emacs/.cache
+/emacs/elpa
+/emacs/auto-save-list
+/emacs/eln-cache
+/emacs/transient
+/emacs/eshell
+/emacs/forge-database.sqlite
+/emacs/projects
+/emacs/projectile-bookmarks.eld
+/emacs/transient
+/emacs/#init.el#
+/emacs/init.el~
